@@ -35,5 +35,11 @@
     <Setting Name="PublicEntriesPath" Type="System.String" Scope="User">
       <Value Profile="(Default)">/entries.json</Value>
     </Setting>
+    <Setting Name="EntryPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">/entries/</Value>
+    </Setting>
+    <Setting Name="EntrySuffix" Type="System.String" Scope="User">
+      <Value Profile="(Default)">.json</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

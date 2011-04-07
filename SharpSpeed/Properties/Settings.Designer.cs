@@ -136,5 +136,29 @@ namespace SharpSpeed.Properties {
                 this["PublicEntriesPath"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("/entries/")]
+        public string EntryPath {
+            get {
+                return ((string)(this["EntryPath"]));
+            }
+            set {
+                this["EntryPath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute(".json")]
+        public string EntrySuffix {
+            get {
+                return ((string)(this["EntrySuffix"]));
+            }
+            set {
+                this["EntrySuffix"] = value;
+            }
+        }
     }
 }

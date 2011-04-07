@@ -28,6 +28,37 @@ namespace SharpSpeed
             }
         }
 
+        public IEntry GetEntry(int id)
+        {
+            try
+            {
+                
+                var requestPath = string.Format("{0}{1}{2}", _settings.EntryPath, id, _settings.EntrySuffix);
+                using (var resp = ProcessRequest(requestPath, "GET", null))
+                {
+                    var respContent = ReadResponseContent(resp);
+                    var respNote = JsonConvert.DeserializeObject<Entry>(respContent);
+                    return respNote;
+                }
+            }
+            catch (WebException ex)
+            {
+                var resp = (HttpWebResponse)ex.Response;
+                switch (resp.StatusCode)
+                {
+                    //404
+                    case HttpStatusCode.NotFound:
+                        throw new SharpSpeedNonExistentEntryException(id, ex);
+                    //401
+                    case HttpStatusCode.Unauthorized:
+                        throw new SharpSpeedAuthorisationException(ex);
+                    default:
+                        throw;
+                }
+            }
+            catch (Exception) { throw; }
+        }
+
         public IPerson GetPerson(string username)
         {
             try

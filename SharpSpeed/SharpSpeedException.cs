@@ -62,4 +62,27 @@ namespace SharpSpeed
 	    }
 
     }
+
+    /// <summary>
+    /// Thrown in the event a non existent key is referenced
+    /// </summary>
+    public class SharpSpeedNonExistentEntryException : SharpSpeedException
+    {
+        private int _id;
+        public override string Message
+        {
+            get
+            {
+                return string.Format("No entry found for id: {0}", _id);
+            }
+        }
+
+        public SharpSpeedNonExistentEntryException(int id, Exception ex = null)
+            : base(null, ex)
+        {
+
+            _id = id;
+        }
+
+    }
 }

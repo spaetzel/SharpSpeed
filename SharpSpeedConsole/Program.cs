@@ -21,15 +21,30 @@ namespace SharpSpeedConsole
 
       //      TestEntries();
 
-            TestEntryPaging();
+      //      TestEntryPaging();
 
-            TestEntrySince();
+       //     TestEntrySince();
 
-            TestPublicEntries();
+//TestPublicEntries();
+
+            TestSingleEntry();
 
             Console.WriteLine("Press enter to continue");
 
             Console.ReadLine();
+        }
+
+        private static void TestSingleEntry()
+        {
+            Console.WriteLine("SINGLE ENTRY");
+            var entries = repository.GetEntries("ben", page: 1);
+
+            int id = entries.First().Id;
+
+            var single = repository.GetEntry(id);
+
+            Console.WriteLine(String.Format("{0} {1}", single.At, single.Message));
+
         }
 
         private static void TestEntrySince()
