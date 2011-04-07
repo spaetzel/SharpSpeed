@@ -27,11 +27,25 @@ namespace SharpSpeedConsole
 
 //TestPublicEntries();
 
-            TestSingleEntry();
+      //      TestSingleEntry();
+
+            TestEntryLikes();
 
             Console.WriteLine("Press enter to continue");
 
             Console.ReadLine();
+        }
+
+        private static void TestEntryLikes()
+        {
+            Console.WriteLine("ENTRY LIKES");
+
+            var entry = repository.GetEntry(6369155) as Entry;
+
+            foreach (Like curLike in entry.Likes)
+            {
+                Console.WriteLine(String.Format("{0} {1}", curLike.User.Username, curLike.CreatedAt));
+            }
         }
 
         private static void TestSingleEntry()

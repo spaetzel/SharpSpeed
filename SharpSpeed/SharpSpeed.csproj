@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\ILike.cs" />
     <Compile Include="Interfaces\IComment.cs" />
     <Compile Include="Interfaces\IDistance.cs" />
     <Compile Include="Interfaces\IEntry.cs" />
@@ -53,6 +54,7 @@
     <Compile Include="Json\DistanceConverter.cs" />
     <Compile Include="Json\GeoConverter.cs" />
     <Compile Include="Objects\Comment.cs" />
+    <Compile Include="Objects\Like.cs" />
     <Compile Include="Objects\EntryEnumerable.cs" />
     <Compile Include="Objects\Distance.cs" />
     <Compile Include="Objects\Entry.cs" />

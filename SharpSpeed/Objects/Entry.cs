@@ -46,6 +46,14 @@ namespace SharpSpeed
             private set;
         }
 
+
+        [JsonProperty("likes", NullValueHandling = NullValueHandling.Ignore)]
+        public Like[] Likes
+        {
+            get;
+            private set;
+        }
+
      
     }
 }
