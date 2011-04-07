@@ -32,7 +32,7 @@ namespace SharpSpeed
             try
             {
                 StringParamCheck("username", username);
-                var requestPath = string.Format("{0}/{1}.json", _settings.PeoplePath, username);
+                var requestPath = string.Format("{0}{1}{2}", _settings.PersonPath, username, _settings.PersonSuffix);
                 using (var resp = ProcessRequest(requestPath, "GET", null))
                 {
                     var respContent = ReadResponseContent(resp);
@@ -58,6 +58,67 @@ namespace SharpSpeed
             catch (Exception) { throw; }
         }
 
+        /// <summary>
+        /// Gets the index of routes for a person
+        /// </summary>
+        /// <returns>An INoteEnumerable of T notes</returns>
+        public IEnumerable<Route> GetRoutes(string username)
+        {
+            try
+            {
+                StringParamCheck("username", username);
+
+                string requestPath = string.Format("{0}{1}{2}", _settings.RoutesPath, username, _settings.RoutesSuffix);
+
+                using (var resp = ProcessRequest(requestPath, "GET", null))
+                {
+                    var respContent = ReadResponseContent(resp);
+                    var notes = JsonConvert.DeserializeObject<RouteEnumerable>(respContent);
+                    return notes;
+                }
+            }
+            catch (WebException ex)
+            {
+                var resp = (HttpWebResponse)ex.Response;
+                switch (resp.StatusCode)
+                {
+                    default:
+                        throw;
+                }
+            }
+            catch (Exception) { throw; }
+        }
+
+        /// <summary>
+        /// Gets the index of entries for a person
+        /// </summary>
+        /// <returns>An INoteEnumerable of T notes</returns>
+        public IEnumerable<Entry> GetEntries(string username)
+        {
+            try
+            {
+                StringParamCheck("username", username);
+
+                string requestPath = string.Format("{0}{1}{2}", _settings.EntriesPath, username, _settings.EntriesSuffix);
+
+                using (var resp = ProcessRequest(requestPath, "GET", null))
+                {
+                    var respContent = ReadResponseContent(resp);
+                    var notes = JsonConvert.DeserializeObject<EntryEnumerable>(respContent);
+                    return notes;
+                }
+            }
+            catch (WebException ex)
+            {
+                var resp = (HttpWebResponse)ex.Response;
+                switch (resp.StatusCode)
+                {
+                    default:
+                        throw;
+                }
+            }
+            catch (Exception) { throw; }
+        }
 
         /// <summary>
         /// Generic method to process a request to dailymile.

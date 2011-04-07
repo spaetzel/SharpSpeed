@@ -25,37 +25,37 @@ namespace SharpSpeed.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("people")]
-        public string PeoplePath {
+        [global::System.Configuration.DefaultSettingValueAttribute("/people/")]
+        public string PersonPath {
             get {
-                return ((string)(this["PeoplePath"]));
+                return ((string)(this["PersonPath"]));
             }
         }
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("/api/delete")]
-        public string DeletePath {
+        [global::System.Configuration.DefaultSettingValueAttribute(".json")]
+        public string PersonSuffix {
             get {
-                return ((string)(this["DeletePath"]));
+                return ((string)(this["PersonSuffix"]));
             }
         }
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("/api2/index")]
-        public string IndexPath {
+        [global::System.Configuration.DefaultSettingValueAttribute("/people/")]
+        public string RoutesPath {
             get {
-                return ((string)(this["IndexPath"]));
+                return ((string)(this["RoutesPath"]));
             }
         }
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("/api/search")]
-        public string SearchPath {
+        [global::System.Configuration.DefaultSettingValueAttribute("/routes.json")]
+        public string RoutesSuffix {
             get {
-                return ((string)(this["SearchPath"]));
+                return ((string)(this["RoutesSuffix"]));
             }
         }
         
@@ -77,12 +77,27 @@ namespace SharpSpeed.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("/api2/data")]
-        public string NotePath {
+        [global::System.Configuration.DefaultSettingValueAttribute("/people/")]
+        public string EntriesPath {
             get {
-                return ((string)(this["NotePath"]));
+                return ((string)(this["EntriesPath"]));
+            }
+            set {
+                this["EntriesPath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("/entries.json")]
+        public string EntriesSuffix {
+            get {
+                return ((string)(this["EntriesSuffix"]));
+            }
+            set {
+                this["EntriesSuffix"] = value;
             }
         }
     }

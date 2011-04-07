@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 namespace SharpSpeed
 {
     [JsonObject]
-    class Route : IRoute
+    public class Route : IRoute
     {
 
         [JsonProperty("id", NullValueHandling = NullValueHandling.Ignore)]
