@@ -160,5 +160,29 @@ namespace SharpSpeed.Properties {
                 this["EntrySuffix"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("/people/")]
+        public string FriendsPath {
+            get {
+                return ((string)(this["FriendsPath"]));
+            }
+            set {
+                this["FriendsPath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("/friends.json")]
+        public string FriendsSuffix {
+            get {
+                return ((string)(this["FriendsSuffix"]));
+            }
+            set {
+                this["FriendsSuffix"] = value;
+            }
+        }
     }
 }

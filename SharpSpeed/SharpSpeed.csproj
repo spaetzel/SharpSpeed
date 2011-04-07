@@ -54,6 +54,7 @@
     <Compile Include="Json\DistanceConverter.cs" />
     <Compile Include="Json\GeoConverter.cs" />
     <Compile Include="Objects\Comment.cs" />
+    <Compile Include="Objects\PersonEnumerable.cs" />
     <Compile Include="Objects\Like.cs" />
     <Compile Include="Objects\EntryEnumerable.cs" />
     <Compile Include="Objects\Distance.cs" />

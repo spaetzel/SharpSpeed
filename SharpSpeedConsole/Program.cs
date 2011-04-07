@@ -29,7 +29,9 @@ namespace SharpSpeedConsole
 
       //      TestSingleEntry();
 
-            TestEntryLikes();
+      //      TestEntryLikes();
+
+            TestFriends();
 
             Console.WriteLine("Press enter to continue");
 
@@ -137,6 +139,20 @@ namespace SharpSpeedConsole
 
             Console.WriteLine(String.Format("{0} {1} {2}", person.Username, person.DisplayName, person.Location));
         }
+
+        private static void TestFriends()
+        {
+            Console.WriteLine("FRIENDS");
+            var routes = repository.GetFriends("klake");
+
+            foreach (var curRoute in routes.Take(10))
+            {
+                Console.WriteLine(curRoute.DisplayName);
+            }
+
+           
+        }
+
 
         private static void TestRoutes()
         {

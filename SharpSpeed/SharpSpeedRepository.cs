@@ -123,6 +123,37 @@ namespace SharpSpeed
         }
 
         /// <summary>
+        /// Gets the index of friends for a person
+        /// </summary>
+        /// <returns>All of the friends for that person</returns>
+        public IEnumerable<Person> GetFriends(string username)
+        {
+            try
+            {
+                StringParamCheck("username", username);
+
+                string requestPath = string.Format("{0}{1}{2}", _settings.FriendsPath, username, _settings.FriendsSuffix);
+
+                using (var resp = ProcessRequest(requestPath, "GET", null))
+                {
+                    var respContent = ReadResponseContent(resp);
+                    var notes = JsonConvert.DeserializeObject<PersonEnumerable>(respContent);
+                    return notes;
+                }
+            }
+            catch (WebException ex)
+            {
+                var resp = (HttpWebResponse)ex.Response;
+                switch (resp.StatusCode)
+                {
+                    default:
+                        throw;
+                }
+            }
+            catch (Exception) { throw; }
+        }
+
+        /// <summary>
         /// Gets the index of routes for a person
         /// </summary>
         /// <returns>An INoteEnumerable of T notes</returns>

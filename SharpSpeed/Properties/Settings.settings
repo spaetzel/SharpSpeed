@@ -41,5 +41,11 @@
     <Setting Name="EntrySuffix" Type="System.String" Scope="User">
       <Value Profile="(Default)">.json</Value>
     </Setting>
+    <Setting Name="FriendsPath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">/people/</Value>
+    </Setting>
+    <Setting Name="FriendsSuffix" Type="System.String" Scope="User">
+      <Value Profile="(Default)">/friends.json</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
