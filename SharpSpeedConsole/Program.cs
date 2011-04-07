@@ -15,21 +15,21 @@ namespace SharpSpeedConsole
         {
             repository = SharpSpeedRepository.Instance;
 
-         //   TestProfile();
+            TestProfile();
 
-          //  TestRoutes();
+            TestRoutes();
 
-      //      TestEntries();
+            TestEntries();
 
-      //      TestEntryPaging();
+            TestEntryPaging();
 
-       //     TestEntrySince();
+            TestEntrySince();
 
-//TestPublicEntries();
+            TestPublicEntries();
 
-      //      TestSingleEntry();
+            TestSingleEntry();
 
-      //      TestEntryLikes();
+            TestEntryLikes();
 
             TestFriends();
 
@@ -79,7 +79,7 @@ namespace SharpSpeedConsole
         private static void TestEntryPaging()
         {
             Console.WriteLine("ENTRIES PAGING");
-            var entries = repository.GetEntries("ben", page:1);
+            var entries = repository.GetEntries("ben", page: 1);
 
             Console.WriteLine(String.Format("Page 1 first {0}", entries.First().Message));
 
@@ -99,7 +99,7 @@ namespace SharpSpeedConsole
                 Console.WriteLine(curEntry.Message);
             }
 
-          
+
         }
 
         private static void TestEntries()
@@ -150,7 +150,7 @@ namespace SharpSpeedConsole
                 Console.WriteLine(curRoute.DisplayName);
             }
 
-           
+
         }
 
 
