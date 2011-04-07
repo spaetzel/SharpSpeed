@@ -131,11 +131,44 @@ namespace SharpSpeed
         /// <returns>The most recent entries for the user</returns>
         public IEnumerable<Entry> GetEntries(string username, int? page = null, int? until = null, int? since = null)
         {
+            StringParamCheck("username", username);
+
+            return GetEntriesStream(username, page, until, since);
+        }
+
+
+        /// <summary>
+        /// Gets the index of public entries
+        /// </summary>
+        /// <param name="page">page of results to return, starting with 1</param>
+        /// <param name="since">Fetch all entries with a unix timestamp greater than the given since.</param>
+        /// <param name="until">Fetch all entries with a unix timestamp less than or equal to the given until.</param>
+        /// <returns>The most recent entries for all users</returns>
+        public IEnumerable<Entry> GetEntries( int? page = null, int? until = null, int? since = null)
+        {
+          
+
+            return GetEntriesStream(null, page, until, since);
+        }
+
+
+
+
+        private IEnumerable<Entry> GetEntriesStream(string username, int? page = null, int? until = null, int? since = null)
+        {
             try
             {
-                StringParamCheck("username", username);
+                
+                string requestPath;
 
-                string requestPath = string.Format("{0}{1}{2}", _settings.EntriesPath, username, _settings.EntriesSuffix);
+                if (!string.IsNullOrEmpty(username))
+                {
+                    requestPath = string.Format("{0}{1}{2}", _settings.EntriesPath, username, _settings.EntriesSuffix);
+                }
+                else
+                {
+                    requestPath = string.Format("{0}", _settings.PublicEntriesPath);
+                }
 
 
                 List<string> queryParams = new List<string>();

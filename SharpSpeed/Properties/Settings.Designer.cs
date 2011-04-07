@@ -124,5 +124,17 @@ namespace SharpSpeed.Properties {
                 this["RouteSuffix"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("/entries.json")]
+        public string PublicEntriesPath {
+            get {
+                return ((string)(this["PublicEntriesPath"]));
+            }
+            set {
+                this["PublicEntriesPath"] = value;
+            }
+        }
     }
 }

@@ -25,6 +25,8 @@ namespace SharpSpeedConsole
 
             TestEntrySince();
 
+            TestPublicEntries();
+
             Console.WriteLine("Press enter to continue");
 
             Console.ReadLine();
@@ -54,6 +56,19 @@ namespace SharpSpeedConsole
 
             Console.WriteLine(String.Format("Page 2 first {0}", entries.First().Message));
 
+        }
+
+        private static void TestPublicEntries()
+        {
+            Console.WriteLine("PUBLIC ENTRIES");
+            var entries = repository.GetEntries();
+
+            foreach (var curEntry in entries.Take(10))
+            {
+                Console.WriteLine(curEntry.Message);
+            }
+
+          
         }
 
         private static void TestEntries()
