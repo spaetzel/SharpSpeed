@@ -100,5 +100,29 @@ namespace SharpSpeed.Properties {
                 this["EntriesSuffix"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("/routes/")]
+        public string RoutePath {
+            get {
+                return ((string)(this["RoutePath"]));
+            }
+            set {
+                this["RoutePath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute(".gpx")]
+        public string RouteSuffix {
+            get {
+                return ((string)(this["RouteSuffix"]));
+            }
+            set {
+                this["RouteSuffix"] = value;
+            }
+        }
     }
 }

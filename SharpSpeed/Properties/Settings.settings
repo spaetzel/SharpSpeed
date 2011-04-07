@@ -26,5 +26,11 @@
     <Setting Name="EntriesSuffix" Type="System.String" Scope="User">
       <Value Profile="(Default)">/entries.json</Value>
     </Setting>
+    <Setting Name="RoutePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">/routes/</Value>
+    </Setting>
+    <Setting Name="RouteSuffix" Type="System.String" Scope="User">
+      <Value Profile="(Default)">.gpx</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

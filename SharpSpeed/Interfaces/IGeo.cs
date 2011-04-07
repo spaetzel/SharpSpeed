@@ -8,7 +8,7 @@ namespace SharpSpeed.Interfaces
     public interface IGeo
     {
         string Type { get; set; }
-        float[] Coordinates { get; set; }
+        double[] Coordinates { get; set; }
 
     }
 }

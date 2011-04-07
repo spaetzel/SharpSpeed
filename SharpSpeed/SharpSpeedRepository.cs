@@ -7,6 +7,7 @@ using System.Net;
 using System.IO;
 using Newtonsoft.Json;
 using SharpSpeed.Properties;
+using System.Xml.Linq;
 
 namespace SharpSpeed
 {
@@ -56,6 +57,38 @@ namespace SharpSpeed
                 }
             }
             catch (Exception) { throw; }
+        }
+
+        public IEnumerable<double[]> GetRoute(int id)
+        {
+            string gpx = GetRouteGpx(id);
+
+            return ParseGpx(gpx);
+        }
+
+        private IEnumerable<double[]> ParseGpx(string gpx)
+        {
+            XDocument doc = XDocument.Parse(gpx);
+
+            XNamespace ns = "http://www.topografix.com/GPX/1/1";
+
+            var segments = doc.Element(ns + "gpx").Element(ns+ "trk").Elements(ns + "trkseg");
+
+            return from pt in segments.Elements(ns + "trkpt")
+                   select new double[] { Convert.ToDouble(pt.Attribute("lon").Value), Convert.ToDouble(pt.Attribute("lat").Value) };
+        }
+
+        public string GetRouteGpx(int id)
+        {
+             string requestPath = string.Format("{0}{1}{2}", _settings.RoutePath, id, _settings.RouteSuffix);
+
+             using (var resp = ProcessRequest(requestPath, "GET", null))
+             {
+                 var respContent = ReadResponseContent(resp);
+
+                 return respContent;
+             }
+
         }
 
         /// <summary>

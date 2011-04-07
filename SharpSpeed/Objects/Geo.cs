@@ -20,7 +20,7 @@ namespace SharpSpeed
         }
 
         [JsonProperty("coordinates", NullValueHandling = NullValueHandling.Ignore)]
-        public float[] Coordinates
+        public double[] Coordinates
         {
             get;
             set;

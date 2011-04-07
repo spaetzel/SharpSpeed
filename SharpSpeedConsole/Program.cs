@@ -27,6 +27,17 @@ namespace SharpSpeedConsole
                 Console.WriteLine(curRoute.Name);
             }
 
+            Console.WriteLine("POINTS");
+
+            var route = routes.FirstOrDefault();
+
+            var points = repository.GetRoute(route.Id);
+
+            foreach (var curPoint in points)
+            {
+                Console.WriteLine("{0} {1}", curPoint[0], curPoint[1]);
+            }
+
             Console.WriteLine("ENTRIES");
             var entries = repository.GetEntries("spaetzel");
 
