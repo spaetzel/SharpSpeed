@@ -44,6 +44,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\IDistance.cs" />
+    <Compile Include="Interfaces\IGeo.cs" />
+    <Compile Include="Interfaces\IPerson.cs" />
+    <Compile Include="Interfaces\IRoute.cs" />
+    <Compile Include="Json\DistanceConverter.cs" />
+    <Compile Include="Json\GeoConverter.cs" />
+    <Compile Include="Objects\Distance.cs" />
+    <Compile Include="Objects\Geo.cs" />
+    <Compile Include="Objects\Person.cs" />
+    <Compile Include="Objects\Route.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
