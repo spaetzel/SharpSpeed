@@ -125,8 +125,11 @@ namespace SharpSpeed
         /// <summary>
         /// Gets the index of entries for a person
         /// </summary>
-        /// <returns>An INoteEnumerable of T notes</returns>
-        public IEnumerable<Entry> GetEntries(string username)
+        /// <param name="page">page of results to return, starting with 1</param>
+        /// <param name="since">Fetch all entries with a unix timestamp greater than the given since.</param>
+        /// <param name="until">Fetch all entries with a unix timestamp less than or equal to the given until.</param>
+        /// <returns>The most recent entries for the user</returns>
+        public IEnumerable<Entry> GetEntries(string username, int? page = null, int? until = null, int? since = null)
         {
             try
             {
@@ -134,7 +137,27 @@ namespace SharpSpeed
 
                 string requestPath = string.Format("{0}{1}{2}", _settings.EntriesPath, username, _settings.EntriesSuffix);
 
-                using (var resp = ProcessRequest(requestPath, "GET", null))
+
+                List<string> queryParams = new List<string>();
+
+                if (page != null)
+                {
+                    queryParams.Add(String.Format("page={0}", page));
+                }
+
+                if (until != null)
+                {
+                    queryParams.Add(String.Format("until={0}", until));
+                }
+
+                if (since != null)
+                {
+                    queryParams.Add(String.Format("since={0}", since));
+                }
+
+
+
+                using (var resp = ProcessRequest(requestPath, "GET", queryParams ))
                 {
                     var respContent = ReadResponseContent(resp);
                     var notes = JsonConvert.DeserializeObject<EntryEnumerable>(respContent);
@@ -163,12 +186,16 @@ namespace SharpSpeed
         /// <param name="queryParams">Queryparameters for the request</param>
         /// <returns>An HttpWebResponse continaing details returned from dailymile</returns>
         private static HttpWebResponse ProcessRequest(string requestPath, string method,
-                                                      string queryParams = null, string content = null)
+                                                      IEnumerable<string> queryParams = null, string content = null)
         {
             try
             {
                 var url = string.Format("{0}{1}{2}", _settings.Scheme, _settings.Domain, requestPath);
-                if (!string.IsNullOrEmpty(queryParams)) url += "?" + queryParams;
+                if (queryParams != null && queryParams.Count() > 0)
+                {
+                    url += "?" + string.Join( "&", queryParams.ToArray() );
+                }
+
                 var req = WebRequest.Create(url) as HttpWebRequest;
                 req.CookieContainer = new CookieContainer();
                 req.Method = method;
