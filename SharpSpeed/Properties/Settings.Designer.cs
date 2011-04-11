@@ -77,111 +77,84 @@ namespace SharpSpeed.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("/people/")]
         public string EntriesPath {
             get {
                 return ((string)(this["EntriesPath"]));
             }
-            set {
-                this["EntriesPath"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("/entries.json")]
         public string EntriesSuffix {
             get {
                 return ((string)(this["EntriesSuffix"]));
             }
-            set {
-                this["EntriesSuffix"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("/routes/")]
         public string RoutePath {
             get {
                 return ((string)(this["RoutePath"]));
             }
-            set {
-                this["RoutePath"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute(".gpx")]
         public string RouteSuffix {
             get {
                 return ((string)(this["RouteSuffix"]));
             }
-            set {
-                this["RouteSuffix"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("/entries.json")]
         public string PublicEntriesPath {
             get {
                 return ((string)(this["PublicEntriesPath"]));
             }
-            set {
-                this["PublicEntriesPath"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("/entries/")]
         public string EntryPath {
             get {
                 return ((string)(this["EntryPath"]));
             }
-            set {
-                this["EntryPath"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute(".json")]
         public string EntrySuffix {
             get {
                 return ((string)(this["EntrySuffix"]));
             }
-            set {
-                this["EntrySuffix"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("/people/")]
         public string FriendsPath {
             get {
                 return ((string)(this["FriendsPath"]));
             }
-            set {
-                this["FriendsPath"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("/friends.json")]
         public string FriendsSuffix {
             get {
                 return ((string)(this["FriendsSuffix"]));
-            }
-            set {
-                this["FriendsSuffix"] = value;
             }
         }
     }

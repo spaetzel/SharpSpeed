@@ -20,31 +20,31 @@
     <Setting Name="Scheme" Type="System.String" Scope="Application">
       <Value Profile="(Default)">https://</Value>
     </Setting>
-    <Setting Name="EntriesPath" Type="System.String" Scope="User">
+    <Setting Name="EntriesPath" Type="System.String" Scope="Application">
       <Value Profile="(Default)">/people/</Value>
     </Setting>
-    <Setting Name="EntriesSuffix" Type="System.String" Scope="User">
+    <Setting Name="EntriesSuffix" Type="System.String" Scope="Application">
       <Value Profile="(Default)">/entries.json</Value>
     </Setting>
-    <Setting Name="RoutePath" Type="System.String" Scope="User">
+    <Setting Name="RoutePath" Type="System.String" Scope="Application">
       <Value Profile="(Default)">/routes/</Value>
     </Setting>
-    <Setting Name="RouteSuffix" Type="System.String" Scope="User">
+    <Setting Name="RouteSuffix" Type="System.String" Scope="Application">
       <Value Profile="(Default)">.gpx</Value>
     </Setting>
-    <Setting Name="PublicEntriesPath" Type="System.String" Scope="User">
+    <Setting Name="PublicEntriesPath" Type="System.String" Scope="Application">
       <Value Profile="(Default)">/entries.json</Value>
     </Setting>
-    <Setting Name="EntryPath" Type="System.String" Scope="User">
+    <Setting Name="EntryPath" Type="System.String" Scope="Application">
       <Value Profile="(Default)">/entries/</Value>
     </Setting>
-    <Setting Name="EntrySuffix" Type="System.String" Scope="User">
+    <Setting Name="EntrySuffix" Type="System.String" Scope="Application">
       <Value Profile="(Default)">.json</Value>
     </Setting>
-    <Setting Name="FriendsPath" Type="System.String" Scope="User">
+    <Setting Name="FriendsPath" Type="System.String" Scope="Application">
       <Value Profile="(Default)">/people/</Value>
     </Setting>
-    <Setting Name="FriendsSuffix" Type="System.String" Scope="User">
+    <Setting Name="FriendsSuffix" Type="System.String" Scope="Application">
       <Value Profile="(Default)">/friends.json</Value>
     </Setting>
   </Settings>
