@@ -106,7 +106,7 @@ namespace SharpSpeed
             var segments = doc.Element(ns + "gpx").Element(ns+ "trk").Elements(ns + "trkseg");
 
             return from pt in segments.Elements(ns + "trkpt")
-                   select new double[] { Convert.ToDouble(pt.Attribute("lon").Value), Convert.ToDouble(pt.Attribute("lat").Value) };
+                   select new double[] { Convert.ToDouble(pt.Attribute("lat").Value), Convert.ToDouble(pt.Attribute("lon").Value) };
         }
 
         public string GetRouteGpx(int id)
